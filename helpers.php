@@ -14,6 +14,7 @@ function basePath($path = "") {
 
 /**
  * Load a view
+ * 
  * @param string $name
  * @return void
  */
@@ -21,6 +22,8 @@ function basePath($path = "") {
 function loadView($name) {
 
   $viewPath = basePath("views/{$name}.view.php");
+
+  // inspect($viewPath);
 
   if (file_exists($viewPath)) {
     require $viewPath;
@@ -31,6 +34,7 @@ function loadView($name) {
 
 /**
  * Load a parital
+ * 
  * @param string $name
  * @return void
  */
@@ -42,6 +46,19 @@ function loadPartial($name) {
   } else {
     echo "View '{$name} not found'";
   }
+}
+
+/**
+ * Inspect a value(s)
+ * 
+ * @param mixed $value
+ * @return void
+ */
+
+function inspect($value) {
+  echo '<pre>';
+  var_dump($value);
+  echo '</pre>';
 }
 
 /**
