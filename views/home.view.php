@@ -213,6 +213,4 @@
   </div>
 </section>
 
-</body>
-
-</html>
+<?php require basePath('views/partial/footer.php') ?>
