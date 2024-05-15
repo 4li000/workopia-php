@@ -21,3 +21,13 @@ function basePath($path = "") {
 function loadView($name) {
   require basePath("views/{$name}.view.php");
 }
+
+/**
+ * Load a parital
+ * @param string $name
+ * @return void
+ */
+
+function loadPartial($name) {
+  require basePath("views/partials/{$name}.php");
+}
