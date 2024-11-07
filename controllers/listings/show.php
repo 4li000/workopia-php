@@ -8,10 +8,11 @@ $id = $_GET['id'] ?? '';
 $params = [
   'id' => $id
 ];
-inspect($params);
 
 $listing = $db->query('SELECT * FROM listings WHERE id = :id', $params)->fetch();
 
-inspect($listing);
 
-loadView('listings/show');
+
+loadView('listings/show', [
+  'listing' => $listing
+]);
